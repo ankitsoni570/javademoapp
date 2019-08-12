@@ -1,16 +1,20 @@
 steps:
-- name: 'gcr.io/sodium-sublime-243008/sonar-scanner:latest'
+
+- name: 'gcr.io/concrete-crow-244606/sonar-scanner:latest'
   args:
-    - '-Dsonar.host.url=http://34.93.241.110:9000'
-    - '-Dsonar.login=1fd255179c3237df2b59a97027f8bfe9709bd559'
-    - '-Dsonar.projectKey=javademoproject'
+    - '-Dsonar.host.url=http://35.238.209.220:9000'
+    - '-Dsonar.login=84ab78a95139a8d3679613ef3f82ef4f1e66c0aa'
+    - '-Dsonar.projectKey=javademoapp'
     - '-Dsonar.sources=./src/user/'
+  
 - name: 'gcr.io/cloud-builders/mvn'
   args: ['install']
+  
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/sodium-sublime-243008/javademoappwithcloudbuild:$SHORT_SHA', '.']
+  args: ['build', '-t', 'gcr.io/concrete-crow-244606/javademoappwithcloudbuild', '.']
+  
 artifacts:
   objects:
     location: 'gs://del7aug-ganeshbucket/javademoapp'
     paths: ['/workspace/target/DemoPipelineJava-0.0.1-SNAPSHOT.war']
-images: ['gcr.io/sodium-sublime-243008/javademoappwithcloudbuild:$SHORT_SHA']
+images: ['gcr.io/sodium-sublime-243008/javademoappwithcloudbuild']
