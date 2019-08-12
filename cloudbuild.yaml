@@ -12,10 +12,5 @@ steps:
   
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/concrete-crow-244606/javademoappwithcloudbuild', '.']
-  
-artifacts:
-  objects:
-    location: 'gs://del7aug-ganeshbucket/javademoapp'
-    paths: ['/workspace/target/DemoPipelineJava-0.0.1-SNAPSHOT.war']
     
 images: ['gcr.io/concrete-crow-244606/javademoappwithcloudbuild']
