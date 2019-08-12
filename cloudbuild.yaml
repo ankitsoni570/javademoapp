@@ -5,7 +5,7 @@ steps:
     - '-Dsonar.host.url=http://35.238.209.220:9000'
     - '-Dsonar.login=84ab78a95139a8d3679613ef3f82ef4f1e66c0aa'
     - '-Dsonar.projectKey=javademoapp'
-    - '-Dsonar.sources=./src/user/'
+    - '-Dsonar.sources=./src/user/validator.java'
   
 - name: 'gcr.io/cloud-builders/mvn'
   args: ['install']
