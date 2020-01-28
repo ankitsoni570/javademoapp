@@ -2,8 +2,8 @@ steps:
 
 - name: 'gcr.io/concrete-crow-244606/sonar-scanner:latest'
   args:
-    - '-Dsonar.host.url=http://35.238.209.220:9000'
-    - '-Dsonar.login=84ab78a95139a8d3679613ef3f82ef4f1e66c0aa'
+    - '-Dsonar.host.url=http://35.208.215.165:9000'
+    - '-Dsonar.login=853eb32d94a99613ba41174803fa057be4dd8420'
     - '-Dsonar.projectKey=javademoapp'
     - '-Dsonar.sources=./src/user/'
   
